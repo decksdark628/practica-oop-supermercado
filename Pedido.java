@@ -3,7 +3,11 @@ import java.util.Scanner;
 public class Pedido{
     private Producto[] productos;
 
-    private int sumarCalorias(){
+    public Pedido(Producto[] prods){
+        productos = prods;
+    }
+
+    public int sumarCalorias(){
         int suma = 0;
 
         if (esListaDeAlimentos()){
@@ -63,5 +67,13 @@ public class Pedido{
             }
         }
         return suma;
+    }
+
+    public Producto[] getProductos() {
+        return this.productos;
+    }
+
+    public void setProductos(Producto[] productos) {
+        this.productos = productos;
     }
 }
