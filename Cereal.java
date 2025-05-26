@@ -32,4 +32,10 @@ public class Cereal extends Alimento{
     public void setTipoCereal(String tipoCereal) {
         this.tipoCereal = tipoCereal;
     }
+
+    @Override
+    public String toString() {
+        return "\tCereal (" + super.toString() + ", tipo: " + getTipoCereal() + ")";
+    }
+
 }

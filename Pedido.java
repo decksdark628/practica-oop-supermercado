@@ -8,6 +8,7 @@ public class Pedido{
     }
 
     public int sumarCalorias(){
+        System.out.println("Has escogido sumar las calorias de tus productos...");
         int suma = 0;
 
         if (esListaDeAlimentos()){
@@ -17,7 +18,7 @@ public class Pedido{
             }
         }
         else{
-            System.out.println("No todos los productos son alimentos\n¿Deseas sumar las calorias de SOLO los alimentos?(s/n)");
+            System.out.println("\tNo todos los productos son alimentos\n¿Deseas sumar las calorias de SOLO los alimentos?(s/n)");
             if(confSumaSoloAlimentos())
                 suma = sumarCalSoloAlimentos();
             else
@@ -75,5 +76,13 @@ public class Pedido{
 
     public void setProductos(Producto[] productos) {
         this.productos = productos;
+    }
+
+    public String toString(){
+        String temp ="";
+        for (int i = 0; i<productos.length; i++){
+            temp += productos[i].toString()+"\n";
+        }
+        return temp;
     }
 }

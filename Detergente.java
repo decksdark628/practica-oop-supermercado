@@ -23,4 +23,10 @@ public class Detergente extends Producto implements ILiquido{
     public void setTipoEnvase(String tipoEnvase) {
         this.tipoEnvase = tipoEnvase;
     }
+
+    @Override
+    public String toString() {
+        return "\tDetergente (" + super.toString() + ", volumen: " + getVolumen() + "L" +
+            ", Envase: " + getTipoEnvase() + ")";
+    }
 }

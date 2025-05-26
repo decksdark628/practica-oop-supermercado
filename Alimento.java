@@ -24,4 +24,11 @@ public abstract class Alimento extends Producto implements IAlimento{
     public void setCaducidad(Date caducidad) {
         this.caducidad = caducidad;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", calorias: " + getCalorias() + 
+            ", Caducidad: " + getCaducidad();
+    }
+
 }

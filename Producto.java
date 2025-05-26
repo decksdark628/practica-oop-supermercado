@@ -23,4 +23,11 @@ public abstract class Producto{
         this.precio = precio;
     }
 
+    @Override
+    public String toString() {
+        return " marca: " + getMarca() + 
+            ", precio: " + getPrecio();
+    }
+
+
 }

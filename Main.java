@@ -2,6 +2,7 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args){
+        System.out.println("SUPERMERCADO");
         DateGenerator dgen = new DateGenerator();
         Date date1 = dgen.generateDate(2026, 10, 9);
         Date date2 = dgen.generateDate(2028, 2, 20);
@@ -10,14 +11,15 @@ public class Main {
 
         Cereal cer1 = new Cereal(date1, "Schar", 2.30f, "maiz");
         Cereal cer2 = new Cereal(date2, "Davert", 13.5f, "espelta");
-        Vino vin1 = new Vino(date3, "Lopez Cristobal La Linde 2023", 9, 10);
-        Vino vin2 = new Vino(date4, "Ponte da Boga P. Mencia 2023", 10, 14);
+        Vino vin1 = new Vino(date3, "Lopez Cristobal La Linde 2023", 9, 10, 1.5f, "botella");
+        Vino vin2 = new Vino(date4, "Ponte da Boga P. Mencia 2023", 10, 14, 0.75f, "caja");
         Detergente det = new Detergente("Bosque Verde", 2.39f, 1.95f, "flexible");
 
         Producto[] prods = {cer1, vin1, vin2, cer2, det};
         Pedido pedido = new Pedido(prods);
 
+        System.out.println("Productos en tu ultima orden: ");
         System.out.println(pedido);
-        pedido.sumarCalorias();
+        System.out.println("\tTotal de calorias: " + pedido.sumarCalorias());
     }   
 }

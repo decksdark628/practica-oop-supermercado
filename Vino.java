@@ -5,10 +5,12 @@ public class Vino extends Alimento implements ILiquido{
     private float volumen;
     private String tipoEnvase;
 
-    public Vino(Date caducidad, String marca, float precio, int gradosAlcohol){
+    public Vino(Date caducidad, String marca, float precio, int gradosAlcohol, float volumen, String tipoEnvase){
         super(caducidad, marca, precio);
         this.gradosAlcohol = gradosAlcohol;
         super.setCalorias(calcularCalorias());
+        this.volumen = volumen;
+        this.tipoEnvase = tipoEnvase;
     }
 
     private int calcularCalorias(){    
@@ -38,4 +40,12 @@ public class Vino extends Alimento implements ILiquido{
     public void setTipoEnvase(String tipoEnvase) {
         this.tipoEnvase = tipoEnvase;
     }
+
+    @Override
+    public String toString() {
+        return "\tVino (" + super.toString() + ", gradosAlcohol: " + getGradosAlcohol() +
+            ", volumen: " + getVolumen() + "L" +
+            ", tipoEnvase: " + getTipoEnvase() + ")";
+    }
+
 }
